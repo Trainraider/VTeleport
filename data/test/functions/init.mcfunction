@@ -11,7 +11,7 @@ scoreboard objectives remove maxId
 scoreboard objectives remove online
 scoreboard objectives remove loggedOut
 scoreboard objectives remove offline
-scoreboard objectives remove idcheck
+scoreboard objectives remove idCheck
 scoreboard objectives remove cleanupNeeded
 
 #IDs for assigning to players
@@ -22,11 +22,11 @@ scoreboard objectives add maxId dummy
 scoreboard objectives add online dummy
 #marks freshly disconnected players in need of processing
 scoreboard objectives add loggedOut minecraft.custom:minecraft.leave_game
-#Used by #offline to count the number of freshly disconnected players.
+#Used by offline score to count the number of freshly disconnected players.
 #Marks players who have been offline and need a new ID when they come online.
 scoreboard objectives add offline minecraft.custom:minecraft.leave_game
 #Used to check if two IDs match
-scoreboard objectives add idcheck dummy
+scoreboard objectives add idCheck dummy
 #Used to note that ID garbage collection is necessary
 scoreboard objectives add cleanupNeeded dummy
 #Used to delay ID garbage collection until IDs are not in use.
@@ -36,9 +36,9 @@ scoreboard objectives add cleanupNeeded dummy
 #using IDs. Garbage collection will scramble IDs if a player goes offline.
 scoreboard objectives add idBusy dummy
 
-scoreboard players set #maxId maxId 0
-scoreboard players set #offline offline 0
-scoreboard players set #online online 0
+scoreboard players set #var maxId 0
+scoreboard players set #var offline 0
+scoreboard players set #var online 0
 scoreboard players set #var cleanupNeeded 0
 scoreboard players set #var idBusy 0
 ###############################################################################
@@ -52,8 +52,8 @@ scoreboard players set #var idBusy 0
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove rtp
 scoreboard objectives remove tpid
-scoreboard objectives remove tpqueue
-scoreboard objectives remove maxtpqueue
+scoreboard objectives remove tpQueue
+scoreboard objectives remove maxTpQueue
 scoreboard objectives remove confirm
 
 #request a teleport
@@ -63,11 +63,11 @@ scoreboard objectives add confirm trigger
 #ID of who to teleport to
 scoreboard objectives add tpid trigger
 #teleportation queue for handling multiple teleport requests at once
-scoreboard objectives add tpqueue dummy
+scoreboard objectives add tpQueue dummy
 #Used for assigning queue numbers
-scoreboard objectives add maxtpqueue dummy
+scoreboard objectives add maxTpQueue dummy
 
-scoreboard players set #maxtpqueue maxtpqueue 1
+scoreboard players set #var maxTpQueue 1
 scoreboard players enable @a rtp
 scoreboard players set @a tpid 0
 ###############################################################################

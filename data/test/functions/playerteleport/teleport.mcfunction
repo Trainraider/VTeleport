@@ -1,7 +1,7 @@
-tp @s @a[scores={idcheck=0},limit=1]
-scoreboard players remove @a[scores={tpqueue=2..}] tpqueue 1
-scoreboard players remove #maxtpqueue maxtpqueue 1
-execute if score #maxtpqueue maxtpqueue = #1 const run scoreboard players remove #var idBusy 1
+tp @s @a[scores={idCheck=0},limit=1]
+scoreboard players remove @a[scores={tpQueue=2..}] tpQueue 1
+scoreboard players remove #var maxTpQueue 1
+execute if score #var maxTpQueue = #1 const run scoreboard players remove #var idBusy 1
 scoreboard players enable @s rtp
 tag @s remove confirmed
 tag @s remove tp

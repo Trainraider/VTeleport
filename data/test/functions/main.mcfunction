@@ -1,7 +1,4 @@
 #TO DO
-#ID garbage collection with objective tracking whether IDs are currently in use.
-#combine all fake players into #var fake player
-#enforce camalCase on all objectives and tags
 #clean up playerteleport with step tracking objective instead of arbitrary conditions
 #create multiple lanes of teleportation handling
 #add teleport request timeout

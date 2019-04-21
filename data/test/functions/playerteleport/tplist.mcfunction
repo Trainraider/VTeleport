@@ -19,4 +19,4 @@ execute at @a[tag=!active,scores={id=18},limit=1] run tellraw @s {"text":"[Telep
 execute at @a[tag=!active,scores={id=19},limit=1] run tellraw @s {"text":"[Teleport] ","color":"green","extra":[{"color":"white","text":"to "},{"color":"white","selector":"@a[scores={id=19},limit=1]"}],"clickEvent":{"action":"run_command","value":"/minecraft:trigger tpid set 19"}}
 execute at @a[tag=!active,scores={id=20},limit=1] run tellraw @s {"text":"[Teleport] ","color":"green","extra":[{"color":"white","text":"to "},{"color":"white","selector":"@a[scores={id=20},limit=1]"}],"clickEvent":{"action":"run_command","value":"/minecraft:trigger tpid set 20"}}
 tag @s remove active
-scoreboard players reset @s tpqueue
+scoreboard players reset @s tpQueue
