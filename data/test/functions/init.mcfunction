@@ -55,6 +55,7 @@ scoreboard objectives remove tpid
 scoreboard objectives remove tpQueue
 scoreboard objectives remove maxTpQueue
 scoreboard objectives remove confirm
+scoreboard objectives remove tpStep
 
 #request a teleport
 scoreboard objectives add rtp trigger
@@ -66,6 +67,9 @@ scoreboard objectives add tpid trigger
 scoreboard objectives add tpQueue dummy
 #Used for assigning queue numbers
 scoreboard objectives add maxTpQueue dummy
+#Used for tracking which line to execute in playerteleport
+#tracked by player, not #var
+scoreboard objectives add tpStep dummy
 
 scoreboard players set #var maxTpQueue 1
 scoreboard players enable @a rtp

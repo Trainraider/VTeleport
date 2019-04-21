@@ -10,4 +10,5 @@ execute as @a[scores={id=0}] run function test:idmanager/login
 scoreboard players operation #var offline += * loggedOut
 execute if score #var offline matches 1.. run function test:idmanager/logout
 
+#Reassign all IDs only if cleanup is needed, and IDs are not in use.
 execute if score #var cleanupNeeded matches 1 if score #var idBusy matches ..0 run function test:idmanager/cleanup

@@ -1,5 +1,5 @@
 #TO DO
-#clean up playerteleport with step tracking objective instead of arbitrary conditions
+#Add deny option to teleport requests
 #create multiple lanes of teleportation handling
 #add teleport request timeout
 #teleport here
