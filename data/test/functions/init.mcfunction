@@ -30,6 +30,10 @@ scoreboard players set #online online 0
 
 #TELEPORT#
 ###############################################################################
+#Teleport book command
+#/give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/minecraft:trigger rtp set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}
+
+
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove rtp
 scoreboard objectives remove tpid
@@ -46,7 +50,6 @@ scoreboard objectives add tpqueue dummy
 scoreboard objectives add maxtpqueue dummy
 
 scoreboard players set #maxtpqueue maxtpqueue 1
-scoreboard players enable @a tpid
 scoreboard players enable @a rtp
 scoreboard players set @a tpid 0
 ###############################################################################
