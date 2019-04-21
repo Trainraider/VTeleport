@@ -9,3 +9,5 @@ execute as @a[scores={id=0}] run function test:idmanager/login
 #detect when any players have disconnected by incrementing #offline once per newly disconnected player
 scoreboard players operation #offline offline += * loggedOut
 execute if score #offline offline matches 1.. run function test:idmanager/logout
+
+execute if score #var cleanupNeeded matches 1 if score #var idBusy matches ..0 run function test:idmanager/cleanup

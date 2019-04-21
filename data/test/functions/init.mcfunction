@@ -1,3 +1,8 @@
+#constants
+scoreboard objectives add const dummy
+scoreboard players set #0 const 0
+scoreboard players set #1 const 1
+
 #IDMANAGER#
 ###############################################################################
 #remove objectives to ensure they are initialized correctly
@@ -7,6 +12,7 @@ scoreboard objectives remove online
 scoreboard objectives remove loggedOut
 scoreboard objectives remove offline
 scoreboard objectives remove idcheck
+scoreboard objectives remove cleanupNeeded
 
 #IDs for assigning to players
 scoreboard objectives add id dummy
@@ -21,11 +27,20 @@ scoreboard objectives add loggedOut minecraft.custom:minecraft.leave_game
 scoreboard objectives add offline minecraft.custom:minecraft.leave_game
 #Used to check if two IDs match
 scoreboard objectives add idcheck dummy
-
+#Used to note that ID garbage collection is necessary
+scoreboard objectives add cleanupNeeded dummy
+#Used to delay ID garbage collection until IDs are not in use.
+#IDmanager is unaware of when IDs are in use. It is your responsibility to add 1
+#to #var idBusy in your feature when you are using IDs and subtract 1 when you're
+#done using IDs. This will delay garbage collection until all features are not
+#using IDs. Garbage collection will scramble IDs if a player goes offline.
+scoreboard objectives add idBusy dummy
 
 scoreboard players set #maxId maxId 0
 scoreboard players set #offline offline 0
 scoreboard players set #online online 0
+scoreboard players set #var cleanupNeeded 0
+scoreboard players set #var idBusy 0
 ###############################################################################
 
 #TELEPORT#
