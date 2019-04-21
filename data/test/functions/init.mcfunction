@@ -14,9 +14,12 @@ scoreboard objectives remove offline
 scoreboard objectives remove idCheck
 scoreboard objectives remove cleanupNeeded
 
-#IDs for assigning to players
+#permanent IDs tracking players persistantly
+scoreboard objectives add pid dummy
+#IDs for assigning to currently online players
 scoreboard objectives add id dummy
 #this is the biggest ID, used for assigning new IDs
+scoreboard objectives add maxPid dummy
 scoreboard objectives add maxId dummy
 #Tracks how many players are currently online
 scoreboard objectives add online dummy
@@ -37,6 +40,7 @@ scoreboard objectives add cleanupNeeded dummy
 scoreboard objectives add idBusy dummy
 
 scoreboard players set #var maxId 0
+scoreboard players add #var maxPid 0
 scoreboard players set #var offline 0
 scoreboard players set #var online 0
 scoreboard players set #var cleanupNeeded 0
