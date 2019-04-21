@@ -5,6 +5,9 @@ execute as @a[scores={rtp=1}] run function test:playerteleport/joinqueue
 execute as @a[scores={tpQueue=1,tpStep=1}] run function test:playerteleport/tplist
 #After a player has been selected, send that player a teleport request
 execute as @a[scores={tpid=1..,tpStep=2}] run function test:playerteleport/sendrequest
-#when confirmation is recieved, teleport
+#if confirmation is recieved, teleport
 execute as @a[scores={confirm=1}] run scoreboard players set @a[scores={tpStep=3}] tpStep 4
 execute as @a[scores={tpStep=4}] run function test:playerteleport/teleport
+#if confirmation is denied, cancel teleport
+execute as @a[scores={confirm=2}] run scoreboard players set @a[scores={tpStep=3}] tpStep 5
+execute as @a[scores={tpStep=5}] run function test:playerteleport/wrapup
