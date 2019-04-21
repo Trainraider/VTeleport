@@ -39,9 +39,12 @@ scoreboard objectives remove rtp
 scoreboard objectives remove tpid
 scoreboard objectives remove tpqueue
 scoreboard objectives remove maxtpqueue
+scoreboard objectives remove confirm
 
 #request a teleport
 scoreboard objectives add rtp trigger
+#confirm a teleport
+scoreboard objectives add confirm trigger
 #ID of who to teleport to
 scoreboard objectives add tpid trigger
 #teleportation queue for handling multiple teleport requests at once
