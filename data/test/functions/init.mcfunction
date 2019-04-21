@@ -56,6 +56,7 @@ scoreboard objectives remove tpQueue
 scoreboard objectives remove maxTpQueue
 scoreboard objectives remove confirm
 scoreboard objectives remove tpStep
+scoreboard objectives remove timeOut
 
 #request a teleport
 scoreboard objectives add rtp trigger
@@ -70,6 +71,8 @@ scoreboard objectives add maxTpQueue dummy
 #Used for tracking which line to execute in playerteleport
 #tracked by player, not #var
 scoreboard objectives add tpStep dummy
+#Used to automatically cancel teleports after some time
+scoreboard objectives add timeOut dummy
 
 scoreboard players set #var maxTpQueue 1
 scoreboard players enable @a rtp

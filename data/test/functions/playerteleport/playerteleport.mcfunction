@@ -11,3 +11,8 @@ execute as @a[scores={tpStep=4}] run function test:playerteleport/teleport
 #if confirmation is denied, cancel teleport
 execute as @a[scores={confirm=2}] run scoreboard players set @a[scores={tpStep=3}] tpStep 5
 execute as @a[scores={tpStep=5}] run function test:playerteleport/wrapup
+
+#if player does nothing, they timeout and get kicked off the queue
+scoreboard players remove @a[tag=active] timeOut 1
+execute as @a[scores={timeOut=..0}] run tellraw @s {"text":"[Teleportation request timed out]","color":"red","bold":"true"}
+execute as @a[scores={timeOut=..0}] run function test:playerteleport/wrapup

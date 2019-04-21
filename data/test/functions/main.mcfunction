@@ -1,7 +1,6 @@
 #TO DO
-#Add deny option to teleport requests
 #create multiple lanes of teleportation handling
-#add teleport request timeout
+#investigate bugs related to logout/in during tp requests
 #teleport here
 #teleport to homes
 #set homes

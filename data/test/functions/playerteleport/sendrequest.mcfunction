@@ -1,3 +1,4 @@
+scoreboard players set @s timeOut 400
 execute as @a run scoreboard players operation @s idCheck = @s id
 scoreboard players operation @a idCheck -= @s tpid
 scoreboard players enable @a[scores={idCheck=0},limit=1] confirm
