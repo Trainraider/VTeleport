@@ -1,5 +1,5 @@
+###############################################################################
 #TO DO
-#rename datapack something better than 'test'
 #create multiple lanes of teleportation handling
 #investigate bugs related to logout/in during tp requests
 #teleport here
@@ -7,12 +7,16 @@
 #set homes
 #delete homes
 #create a permissions interface managed by external permissions datapack
+#     basically just a permission level score requirement to warp and spawn
+#     setting/deleting commands that is controlled externally
 #teleport to Warps
 #set Warps
 #delete warps
 #teleport to spawn
+###############################################################################
+
 
 #ensures all players have a unique ID score for reference with other commands
-function test:idmanager/idmanager
+function vanillateleport:idmanager/idmanager
 #Enables players to request to teleport to other players
-function test:playerteleport/playerteleport
+function vanillateleport:playerteleport/playerteleport

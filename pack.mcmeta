@@ -1,6 +1,6 @@
 {
 	"pack": {
 		"pack_format": 1,
-		"description": "This is a test"
+		"description": "A natively implemented, plugin replacing teleportation manager for small servers."
 	}
 }
