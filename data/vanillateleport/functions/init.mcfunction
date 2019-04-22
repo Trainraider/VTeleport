@@ -79,6 +79,6 @@ scoreboard objectives add tpStep dummy
 scoreboard objectives add timeOut dummy
 
 scoreboard players set #var maxTpQueue 1
-scoreboard players enable @a rtp
-scoreboard players set @a tpid 0
+scoreboard players enable @e[tag=p] rtp
+scoreboard players set @e[tag=p] tpid 0
 ###############################################################################
