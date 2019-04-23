@@ -2,6 +2,10 @@
 scoreboard objectives add const dummy
 scoreboard players set #0 const 0
 scoreboard players set #1 const 1
+scoreboard players set #2 const 2
+scoreboard players set #3 const 3
+scoreboard players set #4 const 4
+scoreboard players set #5 const 5
 
 #IDMANAGER#
 ###############################################################################
@@ -55,30 +59,42 @@ scoreboard players set #var idBusy 0
 
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove rtp
+scoreboard objectives remove ui
 scoreboard objectives remove tpid
-scoreboard objectives remove tpQueue
-scoreboard objectives remove maxTpQueue
+scoreboard objectives remove tpidCheck
+scoreboard objectives remove tpInstance
+scoreboard objectives remove tpInstanceCheck
+scoreboard objectives remove maxTpInstance
 scoreboard objectives remove confirm
 scoreboard objectives remove tpStep
 scoreboard objectives remove timeOut
 
+
+
 #request a teleport
 scoreboard objectives add rtp trigger
+#Track what UI elements are clicked
+scoreboard objectives add ui trigger
 #confirm a teleport
 scoreboard objectives add confirm trigger
 #ID of who to teleport to
 scoreboard objectives add tpid trigger
-#teleportation queue for handling multiple teleport requests at once
-scoreboard objectives add tpQueue dummy
-#Used for assigning queue numbers
-scoreboard objectives add maxTpQueue dummy
+#Needed to check if ID's are equal
+scoreboard objectives add tpidCheck dummy
+#Keeps simultaneous teleport requests seperate
+scoreboard objectives add tpInstance dummy
+#Needed to check if tpInstances are equal
+scoreboard objectives add tpInstanceCheck dummy
+#keeps track of how many open teleport requests there are
+scoreboard objectives add maxTpInstance dummy
 #Used for tracking which line to execute in playerteleport
 #tracked by player, not #var
 scoreboard objectives add tpStep dummy
 #Used to automatically cancel teleports after some time
 scoreboard objectives add timeOut dummy
 
-scoreboard players set #var maxTpQueue 1
+scoreboard players set #var maxTpInstance 1
+kill @e[type=armor_stand,tag=tp]
 scoreboard players enable @e[tag=p] rtp
 scoreboard players set @e[tag=p] tpid 0
 ###############################################################################
