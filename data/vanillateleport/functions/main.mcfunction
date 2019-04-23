@@ -1,18 +1,25 @@
 ###############################################################################
-#TO DO
-#create multiple lanes of teleportation handling
-#investigate bugs related to logout/in during tp requests
-#teleport here
-#teleport to homes
-#set homes
-#delete homes
-#create a permissions interface managed by external permissions datapack
-#     basically just a permission level score requirement to warp and spawn
-#     setting/deleting commands that is controlled externally
-#teleport to Warps
-#set Warps
-#delete warps
-#teleport to spawn
+#Current Version: V0.1
+#Roadmap:
+# V0.2 create multiple lanes of teleportation handling
+# V0.3 create a permissions interface managed by external permissions datapack
+#        basically just a permission level score requirement to warp and spawn
+#        setting/deleting commands that is controlled externally. Permissions
+#        plugin will inherit IDManager, which will be locally disabled (or enabled)
+#        depending on if a compatible permissions datapack is detected through a score
+#        it sets.
+# V0.4 investigate bugs related to logout/in during tp requests
+# V0.5 teleport here
+# V0.6 teleport to homes
+#        set homes
+#        delete homes
+# V0.7 teleport to Warps
+#        set Warps
+#        delete warps
+# V0.8 teleport to spawn
+#        set spawn
+#        delete spawn
+# V1.0 Full release after bug fixes.
 ###############################################################################
 
 

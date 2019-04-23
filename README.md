@@ -1,6 +1,6 @@
 # VanillaTeleport
-A vanilla, plugin replacing teleport manager for small Minecraft 1.13+ servers
-Better compatibility with future Minecraft versions.
+A vanilla, plugin replacing teleport manager for small Minecraft 1.13+ servers.
+Better compatibility with future Minecraft versions than server plugins. Will be compatible with Minecraft for as long as current commands still work.
 
 Current limitations:
   Only 20 players can be handled at once.
