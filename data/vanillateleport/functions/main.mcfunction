@@ -1,8 +1,17 @@
 ###############################################################################
-#Current Version: V0.1.1
-#Increment x in Version VY.Y.X with every commit
+#Current Version: V0.1.2
+#Increment x in Version VY.Y.X after every commit
 #Issues:
-#
+#UI Navigation
+#        Back and forward buttons lack sanity checks
+#        TPList does not skip unused IDs, and incorrectly works with last valid ID
+#        TPList does not omit user
+#If 2 players with teleport requests stand together, one player's confirmation
+#        confirms both requests
+#If a player recieves 2 tp requests, confirming one confirms all. Deny additional
+#        requests when one is already open/ or else better track IDs.
+#Currently and intentionally designed to work with entities of tag "p" instead
+#        of players, for testing. Also bypasses request confirmation.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
 # V0.3 create a permissions interface managed by external permissions datapack
@@ -25,7 +34,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.1","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.2","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
