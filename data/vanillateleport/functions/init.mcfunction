@@ -1,3 +1,8 @@
+#version
+scoreboard objectives remove version
+scoreboard objectives add version trigger
+scoreboard players enable @a version
+
 #constants
 scoreboard objectives add const dummy
 scoreboard players set #0 const 0
