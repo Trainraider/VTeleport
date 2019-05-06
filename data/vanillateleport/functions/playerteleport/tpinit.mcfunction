@@ -19,10 +19,15 @@ scoreboard players operation @e[tag=tp,tag=new,distance=..1] tpInstance = @s tpI
 tag @e[tag=tp,tag=new,distance=..1] remove new
 execute as @e[tag=tp] run scoreboard players operation @s tpInstanceCheck = @s tpInstance
 scoreboard players operation @e[tag=tp] tpInstanceCheck -= @s tpInstance
-scoreboard players set @e[tag=a1,distance=..1] tpid 1
-scoreboard players set @e[tag=a2,distance=..1] tpid 2
-scoreboard players set @e[tag=a3,distance=..1] tpid 3
-scoreboard players set @e[tag=a4,distance=..1] tpid 4
-scoreboard players set @e[tag=a5,distance=..1] tpid 5
+scoreboard players set @e[tag=a1,scores={tpInstanceCheck=0}] tpid 1
+execute store success score @e[tag=a1,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a1,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={id=1}] pid
+scoreboard players set @e[tag=a2,scores={tpInstanceCheck=0}] tpid 2
+execute store success score @e[tag=a2,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a2,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={id=2}] pid
+scoreboard players set @e[tag=a3,scores={tpInstanceCheck=0}] tpid 3
+execute store success score @e[tag=a3,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a3,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={id=3}] pid
+scoreboard players set @e[tag=a4,scores={tpInstanceCheck=0}] tpid 4
+execute store success score @e[tag=a4,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a4,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={id=4}] pid
+scoreboard players set @e[tag=a5,scores={tpInstanceCheck=0}] tpid 5
+execute store success score @e[tag=a5,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a5,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={id=5}] pid
 
 function vanillateleport:playerteleport/ui/tplist

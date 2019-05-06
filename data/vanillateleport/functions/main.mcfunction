@@ -1,10 +1,9 @@
 ###############################################################################
-#Current Version: V0.1.2
+#Current Version: V0.1.3
 #Increment x in Version VY.Y.X after every commit
 #Issues:
 #UI Navigation
 #        Back and forward buttons lack sanity checks
-#        TPList does not skip unused IDs, and incorrectly works with last valid ID
 #        TPList does not omit user
 #If 2 players with teleport requests stand together, one player's confirmation
 #        confirms both requests
@@ -14,6 +13,7 @@
 #        of players, for testing. Also bypasses request confirmation.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
+#        Also "namespace" all objective and tag names with prefix vtp_ or idm_
 # V0.3 create a permissions interface managed by external permissions datapack
 #        basically just a permission level score requirement to warp and spawn
 #        setting/deleting commands that is controlled externally. Permissions
@@ -34,7 +34,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.2","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.3","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 

@@ -21,10 +21,13 @@ scoreboard objectives remove online
 scoreboard objectives remove loggedOut
 scoreboard objectives remove offline
 scoreboard objectives remove idCheck
+scoreboard objectives remove pidCheck
 scoreboard objectives remove cleanupNeeded
 
 #permanent IDs tracking players persistantly
 scoreboard objectives add pid dummy
+#Used to check if two PIDs match
+scoreboard objectives add pidCheck dummy
 #IDs for assigning to currently online players
 scoreboard objectives add id dummy
 #this is the biggest ID, used for assigning new IDs
@@ -67,12 +70,15 @@ scoreboard objectives remove rtp
 scoreboard objectives remove ui
 scoreboard objectives remove tpid
 scoreboard objectives remove tpidCheck
+scoreboard objectives remove tppid
+scoreboard objectives remove tppidCheck
 scoreboard objectives remove tpInstance
 scoreboard objectives remove tpInstanceCheck
 scoreboard objectives remove maxTpInstance
 scoreboard objectives remove confirm
 scoreboard objectives remove tpStep
 scoreboard objectives remove timeOut
+scoreboard objectives remove validId
 
 
 
@@ -84,8 +90,12 @@ scoreboard objectives add ui trigger
 scoreboard objectives add confirm trigger
 #ID of who to teleport to
 scoreboard objectives add tpid trigger
-#Needed to check if ID's are equal
+#Needed to check if IDs are equal
 scoreboard objectives add tpidCheck dummy
+#PID of who to teleport to
+scoreboard objectives add tppid dummy
+#Needed to check if IDs are equal
+scoreboard objectives add tppidCheck dummy
 #Keeps simultaneous teleport requests seperate
 scoreboard objectives add tpInstance dummy
 #Needed to check if tpInstances are equal
@@ -97,6 +107,8 @@ scoreboard objectives add maxTpInstance dummy
 scoreboard objectives add tpStep dummy
 #Used to automatically cancel teleports after some time
 scoreboard objectives add timeOut dummy
+#Stores whether currently selected ID is in use by a player
+scoreboard objectives add validId dummy
 
 scoreboard players set #var maxTpInstance 1
 kill @e[type=armor_stand,tag=tp]
