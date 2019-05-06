@@ -1,9 +1,8 @@
 ###############################################################################
-#Current Version: V0.1.3
-#Increment x in Version VY.Y.X after every commit
+#Current Version: V0.1.4
+#Increment X in Version VY.Y.X after every commit
 #Issues:
 #UI Navigation
-#        Back and forward buttons lack sanity checks
 #        TPList does not omit user
 #If 2 players with teleport requests stand together, one player's confirmation
 #        confirms both requests
@@ -22,19 +21,20 @@
 #        it sets.
 # V0.4 investigate bugs related to logout/in during tp requests
 # V0.5 teleport here
-# V0.6 teleport to homes
+# V0.6 favorite players list for simplifying tp requests
+# V0.7 teleport to homes
 #        set homes
 #        delete homes
-# V0.7 teleport to Warps
+# V0.8 teleport to Warps
 #        set Warps
 #        delete warps
-# V0.8 teleport to spawn
+# V0.9 teleport to spawn
 #        set spawn
 #        delete spawn
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.3","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.4","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
