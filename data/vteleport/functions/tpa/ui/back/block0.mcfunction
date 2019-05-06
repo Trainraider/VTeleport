@@ -15,4 +15,4 @@ execute store success score @e[tag=a4,scores={tpInstanceCheck=0}] validId run sc
 scoreboard players remove @e[tag=a5,scores={tpInstanceCheck=0}] tpid 5
 execute store success score @e[tag=a5,scores={tpInstanceCheck=0}] validId run scoreboard players operation @e[tag=a5,scores={tpInstanceCheck=0}] tppid = @e[tag=p,limit=1,scores={idIndexCheck=4}] id
 
-function vanillateleport:tpa/ui/tplist
+function vteleport:tpa/ui/tplist

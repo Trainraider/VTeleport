@@ -1,4 +1,4 @@
-function vanillateleport:tpa/trackplayers
+function vteleport:tpa/trackplayers
 
 tellraw @s {"text":"Teleport to","bold":"true"}
 execute at @e[tag=a1,scores={tpInstanceCheck=0,validId=1..}] unless score @e[tag=p,distance=..1,limit=1,sort=nearest] id = @s id run tellraw @s {"text":"","extra":[{"selector":"@e[tag=p,distance=..1,limit=1,sort=nearest]","color":"yellow"},{"text":" [X]","bold":"true","color":"green","clickEvent":{"action":"run_command","value":"/trigger tpid set 1"}}]}

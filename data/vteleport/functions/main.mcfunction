@@ -1,5 +1,5 @@
 ###############################################################################
-#Current Version: V0.1.8
+#Current Version: V0.1.9
 #Increment X in Version VY.Y.X after every commit
 #Issues:
 #If 2 players with teleport requests stand together, one player's confirmation
@@ -39,11 +39,11 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.8","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.9","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
 #ensures all players have a unique ID score for reference with other commands
-function vanillateleport:idmanager/idmanager
+function vteleport:idmanager/idmanager
 #Enables players to request to teleport to other players
-function vanillateleport:tpa/tpa
+function vteleport:tpa/tpa
