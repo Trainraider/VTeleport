@@ -1,2 +1,2 @@
-scoreboard players add #var maxPid 1
-scoreboard players operation @s pid = #var maxPid
+scoreboard players add #var maxId 1
+scoreboard players operation @s id = #var maxId

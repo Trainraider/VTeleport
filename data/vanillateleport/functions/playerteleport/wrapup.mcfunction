@@ -13,6 +13,6 @@ scoreboard players reset @s tpid
 
 scoreboard players remove #var maxTpInstance 1
 execute if score #var maxTpInstance = #1 const run scoreboard players remove #var idBusy 1
-scoreboard players enable @s rtp
+scoreboard players enable @s tpa
 scoreboard players set @s tpStep 0
 scoreboard players reset @s timeOut

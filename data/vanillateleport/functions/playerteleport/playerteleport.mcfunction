@@ -1,5 +1,5 @@
 #Generate list of players for teleport requester
-execute as @e[tag=p,scores={rtp=1}] run function vanillateleport:playerteleport/tpinit
+execute as @e[tag=p,scores={tpa=1}] run function vanillateleport:playerteleport/tpinit
 #make armor stands follow prospective teleport options
 execute as @e[tag=p,scores={tpStep=1..3}] run function vanillateleport:playerteleport/trackplayers
 #show a list of the 5 next players after the back or forward buttons are pressed
