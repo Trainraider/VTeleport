@@ -1,9 +1,8 @@
 ###############################################################################
-#Current Version: V0.1.4
+#Current Version: V0.1.5
 #Increment X in Version VY.Y.X after every commit
 #Issues:
-#UI Navigation
-#        TPList does not omit user
+#Timeouts are broken
 #If 2 players with teleport requests stand together, one player's confirmation
 #        confirms both requests
 #If a player recieves 2 tp requests, confirming one confirms all. Deny additional
@@ -34,7 +33,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.4","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.5","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
