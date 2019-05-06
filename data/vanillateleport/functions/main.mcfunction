@@ -1,5 +1,5 @@
 ###############################################################################
-#Current Version: V0.1.7
+#Current Version: V0.1.8
 #Increment X in Version VY.Y.X after every commit
 #Issues:
 #If 2 players with teleport requests stand together, one player's confirmation
@@ -10,15 +10,11 @@
 #        of players, for testing. Also bypasses request confirmation.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
-#        rename idIndex to idIndex and id to id
-#             Temp IDs should be thought of as nothing more than an index to
-#             iterate through while working with permanent IDs.
-#        Update garbage collection to keep IDs in same order
-#        Comment everything in the playerteleport
+#        Update garbage collection to keep IDs in same order and run anytime
+#        Comment everything in the tpa
 #        Also "namespace" all objective and tag names with prefix vtp_ or idm_
 #        Add a tp cancel function so anyone can cancel their request anytime.
 #        Rename project Vteleport or VTP.
-#        Rename playerteleport folder and function to tpa
 #        investigate bugs related to logout/in during tp requests
 #        Revert to working with players, not test entities. Replace @e[tag=p
 #             with @a[
@@ -43,11 +39,11 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.7","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.8","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
 #ensures all players have a unique ID score for reference with other commands
 function vanillateleport:idmanager/idmanager
 #Enables players to request to teleport to other players
-function vanillateleport:playerteleport/playerteleport
+function vanillateleport:tpa/tpa

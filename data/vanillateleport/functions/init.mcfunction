@@ -102,7 +102,7 @@ scoreboard objectives add tpInstance dummy
 scoreboard objectives add tpInstanceCheck dummy
 #keeps track of how many open teleport requests there are
 scoreboard objectives add maxTpInstance dummy
-#Used for tracking which line to execute in playerteleport
+#Used for tracking which line to execute in tpa
 #tracked by player, not #var
 scoreboard objectives add tpStep dummy
 #Used to automatically cancel teleports after some time
