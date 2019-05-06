@@ -1,3 +1,4 @@
+tag @s remove active
 execute as @e[tag=tp] run scoreboard players operation @s tpInstanceCheck = @s tpInstance
 scoreboard players operation @e[tag=tp] tpInstanceCheck -= @s tpInstance
 execute as @s[scores={tpid=1}] at @e[tag=tp,tag=a1,scores={tpInstanceCheck=0}] run execute as @e[tag=p,distance=..1,scores={confirm=1..}] run scoreboard players reset @s confirm

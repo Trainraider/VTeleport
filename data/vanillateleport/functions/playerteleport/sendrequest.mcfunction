@@ -1,4 +1,4 @@
-scoreboard players set @s timeOut 400
+scoreboard players set @s timeOut 600
 execute as @e[tag=tp] run scoreboard players operation @s tpInstanceCheck = @s tpInstance
 scoreboard players operation @e[tag=tp] tpInstanceCheck -= @s tpInstance
 execute as @s[scores={tpid=1}] at @e[tag=tp,tag=a1,scores={tpInstanceCheck=0}] run execute as @e[tag=p,distance=..1] run scoreboard players enable @s confirm

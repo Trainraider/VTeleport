@@ -1,4 +1,5 @@
 scoreboard players set @s rtp 0
+tag @s add active
 #allow user to use UI
 scoreboard players enable @s tpid
 scoreboard players enable @s ui
