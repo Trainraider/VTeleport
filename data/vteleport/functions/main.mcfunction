@@ -1,7 +1,9 @@
 ###############################################################################
-#Current Version: V0.1.9
+#Current Version: V0.1.10
 #Increment X in Version VY.Y.X after every commit
 #Issues:
+#2 requests are started, the 1st gets wrapped up first. MaxTpInstance is now the
+#        same as 2nd request. New 3rd request starts with same tpInstance value.
 #If 2 players with teleport requests stand together, one player's confirmation
 #        confirms both requests
 #If a player recieves 2 tp requests, confirming one confirms all. Deny additional
@@ -39,7 +41,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.9","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.10","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
