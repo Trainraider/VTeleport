@@ -16,11 +16,11 @@ scoreboard players add #var maxTpInstance 1
 
 #Summon 5 armor stands who follow players that you may send your request to.
 #Marked as new so that they alone recieve the correct tpInstance
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[a1,tp,new]}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[a2,tp,new]}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[a3,tp,new]}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[a4,tp,new]}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[a5,tp,new]}
+summon minecraft:armor_stand ~ ~ ~ {"Tags":[a1,tp,new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon minecraft:armor_stand ~ ~ ~ {"Tags":[a2,tp,new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon minecraft:armor_stand ~ ~ ~ {"Tags":[a3,tp,new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon minecraft:armor_stand ~ ~ ~ {"Tags":[a4,tp,new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon minecraft:armor_stand ~ ~ ~ {"Tags":[a5,tp,new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
 
 #assign tpInstance to newly created armor stands.
 scoreboard players operation @e[tag=tp,tag=new,distance=..1] tpInstance = @s tpInstance

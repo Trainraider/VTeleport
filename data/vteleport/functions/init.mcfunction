@@ -30,6 +30,7 @@ scoreboard objectives add idCheck dummy
 #Index for iterating through currently online players
 scoreboard objectives add idIndex dummy
 #this is the biggest ID, used for assigning new IDs
+#also equal to number of currently online players
 scoreboard objectives add maxId dummy
 scoreboard objectives add maxIdIndex dummy
 #marks freshly disconnected players in need of processing
@@ -65,6 +66,8 @@ scoreboard objectives remove tppid
 scoreboard objectives remove tppidCheck
 scoreboard objectives remove tpInstance
 scoreboard objectives remove tpInstanceCheck
+scoreboard objectives remove tprInstance
+scoreboard objectives remove tprInstanceCheck
 scoreboard objectives remove maxTpInstance
 scoreboard objectives remove confirm
 scoreboard objectives remove tpStep
@@ -83,7 +86,7 @@ scoreboard objectives add confirm trigger
 scoreboard objectives add tpid trigger
 #Needed to check if IDs are equal
 scoreboard objectives add tpidCheck dummy
-#PID of who to teleport to
+#ID of who to teleport to
 scoreboard objectives add tppid dummy
 #Needed to check if IDs are equal
 scoreboard objectives add tppidCheck dummy
@@ -91,6 +94,9 @@ scoreboard objectives add tppidCheck dummy
 scoreboard objectives add tpInstance dummy
 #Needed to check if tpInstances are equal
 scoreboard objectives add tpInstanceCheck dummy
+#ID of tp request received from another player
+scoreboard objectives add tprInstance dummy
+scoreboard objectives add tprInstanceCheck dummy
 #keeps track of how many open teleport requests there are
 scoreboard objectives add maxTpInstance dummy
 #Used for tracking which line to execute in tpa
