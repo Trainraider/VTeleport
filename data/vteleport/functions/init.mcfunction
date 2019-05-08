@@ -17,7 +17,6 @@ scoreboard players set #5 const 5
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove idIndex
 scoreboard objectives remove maxIdIndex
-scoreboard objectives remove online
 scoreboard objectives remove loggedOut
 scoreboard objectives remove offline
 scoreboard objectives remove idIndexCheck
@@ -33,8 +32,6 @@ scoreboard objectives add idIndex dummy
 #this is the biggest ID, used for assigning new IDs
 scoreboard objectives add maxId dummy
 scoreboard objectives add maxIdIndex dummy
-#Tracks how many players are currently online
-scoreboard objectives add online dummy
 #marks freshly disconnected players in need of processing
 scoreboard objectives add loggedOut minecraft.custom:minecraft.leave_game
 #Used by offline score to count the number of freshly disconnected players.
@@ -44,22 +41,16 @@ scoreboard objectives add offline minecraft.custom:minecraft.leave_game
 scoreboard objectives add idIndexCheck dummy
 #Used to note that ID garbage collection is necessary
 scoreboard objectives add cleanupNeeded dummy
-#Used to delay ID garbage collection until IDs are not in use.
-#IDmanager is unaware of when IDs are in use. It is your responsibility to add 1
-#to #var idBusy in your feature when you are using IDs and subtract 1 when you're
-#done using IDs. This will delay garbage collection until all features are not
-#using IDs. Garbage collection will scramble IDs if a player goes offline.
-scoreboard objectives add idBusy dummy
+
 
 scoreboard players set #var maxIdIndex 0
 scoreboard players add #var maxId 0
 scoreboard players set #var offline 0
-scoreboard players set #var online 0
 scoreboard players set #var cleanupNeeded 0
-scoreboard players set #var idBusy 0
+
 ###############################################################################
 
-#TELEPORT#
+#TPA#
 ###############################################################################
 #Teleport book command
 #/give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/minecraft:trigger tpa set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}

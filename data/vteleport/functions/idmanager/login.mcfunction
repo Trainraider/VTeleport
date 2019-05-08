@@ -1,5 +1,3 @@
-
-scoreboard players add #var online 1
 scoreboard players add #var maxIdIndex 1
 #remove offline mark from player
 scoreboard players reset @s offline

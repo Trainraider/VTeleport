@@ -9,7 +9,6 @@ execute as @e[tag=p,scores={id=0}] run function vteleport:idmanager/assignpid
 
 #detect when any players have disconnected by incrementing score offline once per newly disconnected player
 scoreboard players operation #var offline += * loggedOut
-execute if score #var offline matches 1.. run function vteleport:idmanager/logout
-
 #Reassign all IDs only if cleanup is needed, and IDs are not in use.
-execute if score #var cleanupNeeded matches 1 if score #var idBusy matches ..0 run function vteleport:idmanager/cleanup
+execute if score #var offline matches 1.. run function vteleport:idmanager/cleanup
+execute if score #var offline matches 1.. run function vteleport:idmanager/logout

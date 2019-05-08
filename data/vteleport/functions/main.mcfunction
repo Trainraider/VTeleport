@@ -1,9 +1,14 @@
 ###############################################################################
-#Current Version: V0.1.10
+#VTeleport
+#Version: V0.1.11
+#Author u/Trainraider
+#
 #Increment X in Version VY.Y.X after every commit
+#
 #Issues:
-#2 requests are started, the 1st gets wrapped up first. MaxTpInstance is now the
-#        same as 2nd request. New 3rd request starts with same tpInstance value.
+#If 2 requests are started, then the 1st gets wrapped up first. MaxTpInstance is
+#        now the same as 2nd request. New 3rd request starts with same tpInstance
+#        value. 2nd and 3rd requests interfere now.
 #If 2 players with teleport requests stand together, one player's confirmation
 #        confirms both requests
 #If a player recieves 2 tp requests, confirming one confirms all. Deny additional
@@ -12,11 +17,8 @@
 #        of players, for testing. Also bypasses request confirmation.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
-#        Update garbage collection to keep IDs in same order and run anytime
-#        Comment everything in the tpa
 #        Also "namespace" all objective and tag names with prefix vtp_ or idm_
 #        Add a tp cancel function so anyone can cancel their request anytime.
-#        Rename project Vteleport or VTP.
 #        investigate bugs related to logout/in during tp requests
 #        Revert to working with players, not test entities. Replace @e[tag=p
 #             with @a[
@@ -41,7 +43,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.10","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.11","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 

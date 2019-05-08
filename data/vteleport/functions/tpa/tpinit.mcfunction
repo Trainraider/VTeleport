@@ -12,7 +12,6 @@ scoreboard players set @s tpStep 1
 scoreboard players set @s timeOut 600
 #assign this request a unique instance id so it is processed seperately from simultaneous requests
 scoreboard players operation @s tpInstance = #var maxTpInstance
-execute if score #var maxTpInstance = #1 const run scoreboard players add #var idBusy 1
 scoreboard players add #var maxTpInstance 1
 
 #Summon 5 armor stands who follow players that you may send your request to.
