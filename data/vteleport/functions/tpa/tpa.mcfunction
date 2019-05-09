@@ -14,5 +14,4 @@ execute as @e[tag=p,scores={tpStep=3}] run function vteleport:tpa/wrapup
 
 #if player does nothing, they timeout and get kicked off the queue
 scoreboard players remove @e[tag=p,tag=active] timeOut 1
-execute as @e[tag=p,scores={timeOut=..0}] run tellraw @s {"text":"[Teleportation request timed out]","color":"red","bold":"true"}
-execute as @e[tag=p,scores={timeOut=..0}] run function vteleport:tpa/wrapup
+execute as @e[tag=p,scores={timeOut=..0}] run function vteleport:tpa/timeout
