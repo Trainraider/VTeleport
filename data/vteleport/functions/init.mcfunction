@@ -112,3 +112,15 @@ kill @e[type=armor_stand,tag=tp]
 scoreboard players enable @e[tag=p] tpa
 scoreboard players set @e[tag=p] tpid 0
 ###############################################################################
+
+#TPCANCEL#
+###############################################################################
+scoreboard objectives remove tpcancel
+scoreboard objectives add tpcancel trigger
+###############################################################################
+
+#SPELLBOOK#
+###############################################################################
+scoreboard objectives remove tpbook
+scoreboard objectives add tpbook trigger
+###############################################################################

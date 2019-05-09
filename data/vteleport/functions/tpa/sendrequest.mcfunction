@@ -19,13 +19,13 @@ scoreboard players operation @e[tag=p] idCheck -= @s tppid
 scoreboard players enable @e[tag=p,scores={idCheck=0}] confirm
 
 #Sends a tp request to the selected player
-execute as @e[tag=p,scores={idCheck=0},type=player] run function vteleport:tpa/ui/request
+function vteleport:tpa/ui/request
 #Mark other player as having recieved request
-execute unless entity @e[tag=p,scores={idCheck=0,tprInstance=1..},type=player] run scoreboard players operation @e[tag=p,scores={idCheck=0},type=player] tprInstance = @s tpInstance
+execute unless entity @a[tag=p,scores={idCheck=0,tprInstance=1..}] run scoreboard players operation @e[tag=p,scores={idCheck=0},type=player] tprInstance = @s tpInstance
 
 ####Non-player test entities confirm automatically#####
 scoreboard players set @e[tag=p,scores={idCheck=0},type=!player] confirm 1
 
-###############################################
+#######################################################
 #send player to next step of request process
 scoreboard players set @s tpStep 2

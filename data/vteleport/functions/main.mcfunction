@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.12
+#Version: V0.1.13
 #Author u/Trainraider
 #
 #Increment X in Version VY.Y.X after every commit
@@ -11,6 +11,8 @@
 #        selectors is hurting performance.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
+#        Send request receiver notifications of timout and cancellation
+#        Create a trigger to get spellbook
 #        Also "namespace" all objective and tag names with prefix vtp_ or idm_
 #        Add a tp cancel function so anyone can cancel their request anytime.
 #        investigate bugs related to logout/in during tp requests
@@ -24,7 +26,8 @@
 #        it sets.
 # V0.4 teleport here
 #        named tpahere
-# V0.5 favorite players list for simplifying tp requests
+# V0.5 favorite players list for simplifying tp requests when lots of players are
+#        online
 # V0.6 teleport to spawn
 #        set spawn
 #        delete spawn
@@ -37,7 +40,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.12","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.13","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
@@ -45,3 +48,7 @@ scoreboard players enable @a version
 function vteleport:idmanager/idmanager
 #Enables players to request to teleport to other players
 function vteleport:tpa/tpa
+#Cancels teleport requests
+function vteleport:tpcancel/tpcancel
+#Gives a player a book with tp commands
+function vteleport:tpbook/tpbook

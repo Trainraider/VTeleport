@@ -29,3 +29,4 @@ scoreboard players reset @s timeOut
 scoreboard players reset @s tpid
 scoreboard players reset @s ui
 scoreboard players reset @s tppid
+scoreboard players reset @s tpcancel
