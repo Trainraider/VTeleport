@@ -3,51 +3,38 @@ scoreboard objectives remove version
 scoreboard objectives add version trigger
 scoreboard players enable @a version
 
-#constants
-scoreboard objectives add const dummy
-scoreboard players set #0 const 0
-scoreboard players set #1 const 1
-scoreboard players set #2 const 2
-scoreboard players set #3 const 3
-scoreboard players set #4 const 4
-scoreboard players set #5 const 5
-
 #IDMANAGER#
 ###############################################################################
 #remove objectives to ensure they are initialized correctly
-scoreboard objectives remove idIndex
-scoreboard objectives remove maxIdIndex
-scoreboard objectives remove loggedOut
-scoreboard objectives remove offline
-scoreboard objectives remove idIndexCheck
-scoreboard objectives remove idCheck
-scoreboard objectives remove cleanupNeeded
+scoreboard objectives remove idm_idIndex
+scoreboard objectives remove idm_maxIdIndex
+scoreboard objectives remove idm_loggedOut
+scoreboard objectives remove idm_offline
+scoreboard objectives remove idm_idIndexCheck
+scoreboard objectives remove idm_idCheck
 
 #permanent IDs tracking players persistantly
-scoreboard objectives add id dummy
+scoreboard objectives add idm_id dummy
 #Used to check if two IDs match
-scoreboard objectives add idCheck dummy
+scoreboard objectives add idm_idCheck dummy
 #Index for iterating through currently online players
-scoreboard objectives add idIndex dummy
-#this is the biggest ID, used for assigning new IDs
+scoreboard objectives add idm_idIndex dummy
+#this is the biggest ID, used for assigning vtp_new IDs
 #also equal to number of currently online players
-scoreboard objectives add maxId dummy
-scoreboard objectives add maxIdIndex dummy
+scoreboard objectives add idm_maxId dummy
+scoreboard objectives add idm_maxIdIndex dummy
 #marks freshly disconnected players in need of processing
-scoreboard objectives add loggedOut minecraft.custom:minecraft.leave_game
-#Used by offline score to count the number of freshly disconnected players.
-#Marks players who have been offline and need a new ID when they come online.
-scoreboard objectives add offline minecraft.custom:minecraft.leave_game
+scoreboard objectives add idm_loggedOut minecraft.custom:minecraft.leave_game
+#Used by idm_offline score to count the number of freshly disconnected players.
+#Marks players who have been idm_offline and need a vtp_new ID when they come online.
+scoreboard objectives add idm_offline minecraft.custom:minecraft.leave_game
 #Used to check if two IDs match
-scoreboard objectives add idIndexCheck dummy
-#Used to note that ID garbage collection is necessary
-scoreboard objectives add cleanupNeeded dummy
+scoreboard objectives add idm_idIndexCheck dummy
 
 
-scoreboard players set #var maxIdIndex 0
-scoreboard players add #var maxId 0
-scoreboard players set #var offline 0
-scoreboard players set #var cleanupNeeded 0
+scoreboard players set #var idm_maxIdIndex 0
+scoreboard players add #var idm_maxId 0
+scoreboard players set #var idm_offline 0
 
 ###############################################################################
 
@@ -59,58 +46,52 @@ scoreboard players set #var cleanupNeeded 0
 
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove tpa
-scoreboard objectives remove ui
-scoreboard objectives remove tpid
-scoreboard objectives remove tpidCheck
-scoreboard objectives remove tppid
-scoreboard objectives remove tppidCheck
-scoreboard objectives remove tpInstance
-scoreboard objectives remove tpInstanceCheck
-scoreboard objectives remove tprInstance
-scoreboard objectives remove tprInstanceCheck
-scoreboard objectives remove maxTpInstance
+scoreboard objectives remove vtp_ui
+scoreboard objectives remove vtp_tpidIndex
+scoreboard objectives remove vtp_tpid
+scoreboard objectives remove vtp_tpInstance
+scoreboard objectives remove vtp_tpInstncChck
+scoreboard objectives remove vtp_tprInstance
+scoreboard objectives remove vtp_tprInstnChck
+scoreboard objectives remove vtp_maxTpInstnce
 scoreboard objectives remove confirm
-scoreboard objectives remove tpStep
-scoreboard objectives remove timeOut
-scoreboard objectives remove validId
+scoreboard objectives remove vtp_tpStep
+scoreboard objectives remove vtp_timeOut
+scoreboard objectives remove vtp_validId
 
 
 
 #request a teleport
 scoreboard objectives add tpa trigger
 #Track what UI elements are clicked
-scoreboard objectives add ui trigger
+scoreboard objectives add vtp_ui trigger
 #confirm a teleport
 scoreboard objectives add confirm trigger
+#ID iterator of who to teleport to
+scoreboard objectives add vtp_tpidIndex trigger
 #ID of who to teleport to
-scoreboard objectives add tpid trigger
-#Needed to check if IDs are equal
-scoreboard objectives add tpidCheck dummy
-#ID of who to teleport to
-scoreboard objectives add tppid dummy
-#Needed to check if IDs are equal
-scoreboard objectives add tppidCheck dummy
+scoreboard objectives add vtp_tpid dummy
 #Keeps simultaneous teleport requests seperate
-scoreboard objectives add tpInstance dummy
+scoreboard objectives add vtp_tpInstance dummy
 #Needed to check if tpInstances are equal
-scoreboard objectives add tpInstanceCheck dummy
+scoreboard objectives add vtp_tpInstncChck dummy
 #ID of tp request received from another player
-scoreboard objectives add tprInstance dummy
-scoreboard objectives add tprInstanceCheck dummy
+scoreboard objectives add vtp_tprInstance dummy
+scoreboard objectives add vtp_tprInstnChck dummy
 #keeps track of how many open teleport requests there are
-scoreboard objectives add maxTpInstance dummy
+scoreboard objectives add vtp_maxTpInstnce dummy
 #Used for tracking which line to execute in tpa
 #tracked by player, not #var
-scoreboard objectives add tpStep dummy
+scoreboard objectives add vtp_tpStep dummy
 #Used to automatically cancel teleports after some time
-scoreboard objectives add timeOut dummy
+scoreboard objectives add vtp_timeOut dummy
 #Stores whether currently selected ID is in use by a player
-scoreboard objectives add validId dummy
+scoreboard objectives add vtp_validId dummy
 
-scoreboard players set #var maxTpInstance 1
-kill @e[type=armor_stand,tag=tp]
-scoreboard players enable @e[tag=p] tpa
-scoreboard players set @e[tag=p] tpid 0
+scoreboard players set #var vtp_maxTpInstnce 1
+kill @e[type=armor_stand,tag=vtp_tp]
+scoreboard players enable @a tpa
+scoreboard players set @a vtp_tpidIndex 0
 ###############################################################################
 
 #TPCANCEL#

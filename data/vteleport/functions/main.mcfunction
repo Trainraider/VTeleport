@@ -1,20 +1,17 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.14
+#Version: V0.1.15
 #Author u/Trainraider
 #
 #Increment X in Version VY.Y.X after every commit
 #
 #Issues:
-#Currently and intentionally designed to work with entities of tag "p" instead
-#        of players, for testing. Also bypasses request confirmation. Using @e
-#        selectors is hurting performance.
+#
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
-#        Also "namespace" all objective and tag names with prefix vtp_ or idm_
-#        investigate bugs related to logout/in during tp requests
-#        Revert to working with players, not test entities. Replace @e[tag=p
-#             with @a[
+#        investigate bugs related to logout during tp requests
+#        Optimize and remove behavior in tpa that's no longer necessary due to
+#                the user storing the request reciever's id.
 # V0.3 teleport here
 #        named tpahere
 # V0.4 favorite players list for simplifying tp requests when lots of players are
@@ -37,7 +34,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.14","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.15","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 

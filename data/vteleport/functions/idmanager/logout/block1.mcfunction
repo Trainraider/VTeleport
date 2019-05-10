@@ -1,3 +1,3 @@
-scoreboard players add #var idsCleaned 1
-scoreboard players remove #var maxIdIndex 1
-scoreboard players remove @e[tag=p,scores={idIndexCheck=1..}] idIndex 1
+scoreboard players add #var idm_idsCleaned 1
+scoreboard players remove #var idm_maxIdIndex 1
+scoreboard players remove @a[scores={idm_idIndexCheck=1..}] idm_idIndex 1

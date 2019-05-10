@@ -1,5 +1,5 @@
-scoreboard players add #var idIndex 1
-execute as @e[tag=p] run scoreboard players operation @s idIndexCheck = @s idIndex
-scoreboard players operation @e[tag=p] idIndexCheck -= #var idIndex
-execute unless entity @e[tag=p,scores={idIndexCheck=0}] run function vteleport:idmanager/logout/block1
-execute if score #var idIndex < #var maxIdIndex run function vteleport:idmanager/logout/block0
+scoreboard players add #var idm_idIndex 1
+execute as @a run scoreboard players operation @s idm_idIndexCheck = @s idm_idIndex
+scoreboard players operation @a idm_idIndexCheck -= #var idm_idIndex
+execute unless entity @a[scores={idm_idIndexCheck=0}] run function vteleport:idmanager/logout/block1
+execute if score #var idm_idIndex < #var idm_maxIdIndex run function vteleport:idmanager/logout/block0
