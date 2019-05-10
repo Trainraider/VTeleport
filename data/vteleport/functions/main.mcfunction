@@ -1,12 +1,28 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.15
+#Version: V0.1.16
 #Author u/Trainraider
+#We live in a society. Bottom Text.
 #
 #Increment X in Version VY.Y.X after every commit
 #
 #Issues:
+#        Logout during request:
+#                Logout after tpinit:
+#                      they get tags and scores and enabled triggers
+#                      5 armor stands are left in world
 #
+#                      upon logging in later, request has not timed out.
+#                      Armor stands could be made to detect when their host is gone.
+#                
+#                after send request:
+#                      upon logging in later, request has not timed out.
+#                      selected player has confirm enabled and can respond to offline player
+#                      confirmation is processed when both involved come back online and tp occurs
+#
+#                just after confirmation:
+#                      wrapup is delayed until login
+#        Some comments are outdated and don't reflect current functionality.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
 #        investigate bugs related to logout during tp requests
@@ -34,7 +50,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.15","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.16","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
