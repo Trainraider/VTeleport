@@ -1,10 +1,15 @@
+gamerule sendCommandFeedback false
+tellraw @a {"text":"[Vanilla Teleport V0.1.17]","color":"yellow"}
 #version
 scoreboard objectives remove version
 scoreboard objectives add version trigger
 scoreboard players enable @a version
 
+execute unless entity @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[vtp_spawnChunks]}
 #IDMANAGER#
 ###############################################################################
+kill @e[tag=idm_idStruct]
+kill @e[tag=idm.logoutId]
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove idm_idIndex
 scoreboard objectives remove idm_maxIdIndex
@@ -41,7 +46,7 @@ scoreboard players set #var idm_offline 0
 #TPA#
 ###############################################################################
 #Teleport book command
-#/give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/minecraft:trigger tpa set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}
+#/give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger tpa set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}
 
 
 #remove objectives to ensure they are initialized correctly

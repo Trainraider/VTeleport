@@ -21,7 +21,7 @@ scoreboard players enable @a[scores={idm_idCheck=0}] confirm
 #Sends a tp request to the selected player
 function vteleport:tpa/ui/request
 #Mark other player as having recieved request
-execute unless entity @a[tag=p,scores={idm_idCheck=0,vtp_tprInstance=1..}] run scoreboard players operation @a[scores={idm_idCheck=0}] vtp_tprInstance = @s vtp_tpInstance
+execute unless entity @a[scores={idm_idCheck=0,vtp_tprInstance=1..}] run scoreboard players operation @a[scores={idm_idCheck=0}] vtp_tprInstance = @s vtp_tpInstance
 
 #send player to next step of request process
 scoreboard players set @s vtp_tpStep 2
