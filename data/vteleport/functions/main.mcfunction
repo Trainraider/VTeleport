@@ -1,31 +1,19 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.16
+#Version: V0.1.17
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
 #Increment X in Version VY.Y.X after every commit
+#       Above, below, and in init
 #
 #Issues:
-#        Logout during request:
-#                Logout after tpinit:
-#                      they get tags and scores and enabled triggers
-#                      5 armor stands are left in world
-#
-#                      upon logging in later, request has not timed out.
-#                      Armor stands could be made to detect when their host is gone.
-#                
-#                after send request:
-#                      upon logging in later, request has not timed out.
-#                      selected player has confirm enabled and can respond to offline player
-#                      confirmation is processed when both involved come back online and tp occurs
-#
-#                just after confirmation:
-#                      wrapup is delayed until login
+#        Request reciever logs out after send request, but request is not
+#             Immediately cancelled
+#        Make sure all area_effect_clouds are truly permanent
 #        Some comments are outdated and don't reflect current functionality.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
-#        investigate bugs related to logout during tp requests
 #        Optimize and remove behavior in tpa that's no longer necessary due to
 #                the user storing the request reciever's id.
 # V0.3 teleport here
@@ -50,10 +38,11 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"Vanilla Teleport V0.1.16","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.17]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
+execute unless entity @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[vtp_spawnChunks]}
 #ensures all players have a unique ID score for reference with other commands
 function vteleport:idmanager/idmanager
 #Enables players to request to teleport to other players

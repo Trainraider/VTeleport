@@ -16,14 +16,15 @@ scoreboard players add #var vtp_maxTpInstnce 1
 
 #Summon 5 armor stands who follow players that you may send your request to.
 #Marked as vtp_new so that they alone recieve the correct vtp_tpInstance
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[vtp_a1,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[vtp_a2,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[vtp_a3,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[vtp_a4,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
-summon minecraft:armor_stand ~ ~ ~ {"Tags":[vtp_a5,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon armor_stand ~ ~ ~ {"Tags":[vtp_a1,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon armor_stand ~ ~ ~ {"Tags":[vtp_a2,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon armor_stand ~ ~ ~ {"Tags":[vtp_a3,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon armor_stand ~ ~ ~ {"Tags":[vtp_a4,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
+summon armor_stand ~ ~ ~ {"Tags":[vtp_a5,vtp_tp,vtp_new],Marker:1b,Invisible:1b,NoBasePlate:1b,NoGravity:1b}
 
 #assign vtp_tpInstance to newly created armor stands.
 scoreboard players operation @e[tag=vtp_tp,tag=vtp_new,distance=..1] vtp_tpInstance = @s vtp_tpInstance
+scoreboard players operation @e[tag=vtp_tp,tag=vtp_new,distance=..1] idm_id = @s idm_id
 tag @e[tag=vtp_tp,tag=vtp_new,distance=..1] remove vtp_new
 
 #Mark all armor stands that are part of the current request with a vtp_tpInstncChck of 0
