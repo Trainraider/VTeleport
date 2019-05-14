@@ -1,3 +1,4 @@
+tellraw @a {"text":"wrapup","extra":[{"selector":"@s","bold":"true","color":"yellow"}]}
 #The user as no longer vtp_active, remove tag
 tag @s remove vtp_active
 #Prepare armorstands vtp_tpInstance value for comparison

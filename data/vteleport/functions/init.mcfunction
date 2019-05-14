@@ -1,5 +1,6 @@
-gamerule sendCommandFeedback false
-tellraw @a {"text":"[Vanilla Teleport V0.1.17]","color":"yellow"}
+#Uncomment in final release
+#gamerule sendCommandFeedback false
+tellraw @a {"text":"[Vanilla Teleport V0.1.18.1]","color":"yellow"}
 #version
 scoreboard objectives remove version
 scoreboard objectives add version trigger

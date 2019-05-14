@@ -1,11 +1,11 @@
 #players without an ID have it set to 0, others are unchanged
 scoreboard players add @a idm_id 0
 scoreboard players add #var idm_maxIdIndex 1
-#remove idm_offline mark from player
-scoreboard players reset @s idm_offline
 #This is a signal to external features that a player has been offline and may
 #require special handling.
-tag @s add idm.offline
+tag @s[scores={idm_offline=1..}] add idm.offline
+#remove idm_offline mark from player
+scoreboard players reset @s idm_offline
 #assign them a valid unique ID index
 scoreboard players operation @s idm_idIndex = #var idm_maxIdIndex
 scoreboard players set @s idm_idIndexCheck -1
