@@ -1,6 +1,6 @@
-# VTeleport
-A vanilla, plugin replacing teleport manager for small Minecraft 1.13+ servers
-Better compatibility with future Minecraft versions.
+# VanillaTeleport
+A vanilla, plugin replacing teleport manager for small Minecraft 1.13+ servers.
+Better compatibility with future Minecraft versions than server plugins. Will be compatible with Minecraft for as long as current commands still work.
 
 
 Installation:
@@ -9,5 +9,4 @@ Installation:
 
   To teleport use /trigger tpa
   OR
-  Run this command to create a book with the teleportation command:
-  /give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger tpa set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}
+  Get a book with all tp commands with /trigger tpbook
