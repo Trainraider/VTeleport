@@ -9,7 +9,6 @@ scoreboard players reset @s idm_offline
 #assign them a valid unique ID index
 scoreboard players operation @s idm_idIndex = #var idm_maxIdIndex
 scoreboard players set @s idm_idIndexCheck -1
-scoreboard players enable @s tpa
 execute as @s[scores={idm_id=0}] run function vteleport:idmanager/assignid
 
 execute at @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[idm_idStruct,idm_new]}
