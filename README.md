@@ -4,7 +4,7 @@ Better compatibility with future Minecraft versions than server plugins. Will be
 
 
 Installation:
-  Copy the VanillaTeleport folder from just inside the .zip file into your datapacks folder at /.minecraft/saves/[yourworld]/datapacks
+  Copy the VanillaTeleport .zip file into your datapacks folder at /.minecraft/saves/[yourworld]/datapacks
   Open your world
 
   To teleport use /trigger tpa
