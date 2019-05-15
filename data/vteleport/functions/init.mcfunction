@@ -1,6 +1,6 @@
 #Uncomment in final release
 #gamerule sendCommandFeedback false
-tellraw @a {"text":"[Vanilla Teleport V0.1.20]","color":"yellow"}
+tellraw @a {"text":"[Vanilla Teleport V0.1.21]","color":"yellow"}
 #version
 scoreboard objectives remove version
 scoreboard objectives add version trigger
@@ -46,9 +46,6 @@ scoreboard players set #var idm_offline 0
 
 #TPA#
 ###############################################################################
-#Teleport book command
-#/give @p written_book{pages:["{\"text\":\"[Teleport to player]\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger tpa set 1\"}}"],title:"Spell Book",author:Trainraider,display:{Lore:["Useful everyday spells."]}}
-
 
 #remove objectives to ensure they are initialized correctly
 scoreboard objectives remove tpa
@@ -65,7 +62,7 @@ scoreboard objectives remove vtp_tpStep
 scoreboard objectives remove vtp_timeOut
 scoreboard objectives remove vtp_validId
 
-
+tag @a[tag=vtp_active] remove vtp_active
 
 #request a teleport
 scoreboard objectives add tpa trigger
