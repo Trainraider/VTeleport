@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.18
+#Version: V0.1.19
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
@@ -8,8 +8,8 @@
 #       Above, below, and in init
 #
 #Issues:
-#        User logs out after sending request. Unexpected behavior
-#        Datapack reloads during request. The request times out and wrapup occurs
+#        idStruct does not behave correctly. Missing/duplicate entries occur for idm_idIndex.
+#        Datapack reloads during request. The request timesout and wrapup occurs
 #              decrementing vtp_maxTpInstnce incorrectly
 #        Make sure all area_effect_clouds are truly permanent
 #        Some comments are outdated and don't reflect current functionality.
@@ -39,7 +39,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.18]","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.19]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 

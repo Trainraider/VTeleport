@@ -1,6 +1,6 @@
-#One id was removed
+#Track that one (more) id was removed
 scoreboard players add #var idm_idsCleaned 1
-#There is one less id being used.
+#There is one less idIndex in circulation.
 scoreboard players remove #var idm_maxIdIndex 1
 
 #Find the entry containing the logged out player's idIndex and id.
@@ -16,4 +16,8 @@ tag @e[tag=idm.logoutId,tag=new] remove new
 
 #Destroy the entry for the logged out player after it is read.
 kill @e[tag=idm_idStruct,scores={idm_idIndexCheck=0},limit=1]
+#Reassign Idindex to players and structures with greater indexes than the loggout player
 scoreboard players remove @a[scores={idm_idIndexCheck=1..}] idm_idIndex 1
+scoreboard players remove @e[tag=idm_idStruct,scores={idm_idIndexCheck=1..}] idm_idIndex 1
+#We need to check this index again since we just shifted everyone down one. This neutralizes idm_idIndex increasing next time.
+execute if entity @a[scores={idm_idIndexCheck=1..}] run scoreboard players remove #var idm_idIndex 1
