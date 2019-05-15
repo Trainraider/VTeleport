@@ -1,12 +1,19 @@
 #Uncomment in final release
 #gamerule sendCommandFeedback false
-tellraw @a {"text":"[Vanilla Teleport V0.1.22]","color":"yellow"}
+tellraw @a {"text":"[Vanilla Teleport V0.1.23]","color":"yellow"}
 #version
 scoreboard objectives remove version
 scoreboard objectives add version trigger
 scoreboard players enable @a version
 
-execute unless entity @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[vtp_spawnChunks]}
+#Renew all area_effect_clouds
+execute as @e[type=minecraft:area_effect_cloud,tag=perm] run data merge entity @s {Age:0}
+#Create a timer for renewing area_effect_clouds before the expire.
+kill @e[type=area_effect_cloud,tag=cloudTimer]
+summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147481000,Particle:"block air",Tags:[cloudTimer]}
+
+execute unless entity @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[vtp_spawnChunks,perm]}
+
 #IDMANAGER#
 ###############################################################################
 kill @e[tag=idm_idStruct]

@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.22
+#Version: V0.1.23
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
@@ -8,7 +8,6 @@
 #       Above, below, and in init
 #
 #Issues:
-#        Make sure all area_effect_clouds are truly permanent
 #        Some comments are outdated and don't reflect current functionality.
 #Roadmap:
 # V0.2 create multiple lanes of teleportation handling
@@ -36,11 +35,11 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.22]","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.23]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
-execute unless entity @e[tag=vtp_spawnChunks] run summon area_effect_cloud ~ ~ ~ {Radius:0.0001f,Duration:2147483647,Particle:"block air",Tags:[vtp_spawnChunks]}
+execute unless entity @e[tag=cloudTimer] run function vteleport:renew
 #ensures all players have a unique ID score for reference with other commands
 function vteleport:idmanager/idmanager
 #Enables players to request to teleport to other players
