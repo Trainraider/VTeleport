@@ -1,3 +1,4 @@
+execute as @e[tag=idm.logoutId] run tellraw @a ["",{"text":"idm.logoutId idm_id:","bold":true},{"text":" "},{"score":{"name":"@s","objective":"idm_id"}},{"text":" idm_idIndex:","bold":true},{"text":" "},{"score":{"name":"@s","objective":"idm_idIndex"}}]
 #handle players that just logged off
 execute as @e[tag=idm.logoutId] run function vteleport:tpa/logout
 #handle players that were offline.

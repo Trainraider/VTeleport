@@ -8,8 +8,8 @@
 #       Above, below, and in init
 #
 #Issues:
-#        Reciever logs out during request. Unexpected behavior occurs
-#        Datapack reloads during request. The request timesout and wrapup occurs
+#        User logs out after sending request. Unexpected behavior
+#        Datapack reloads during request. The request times out and wrapup occurs
 #              decrementing vtp_maxTpInstnce incorrectly
 #        Make sure all area_effect_clouds are truly permanent
 #        Some comments are outdated and don't reflect current functionality.
