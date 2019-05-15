@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.1.17
+#Version: V0.1.21
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
@@ -8,8 +8,6 @@
 #       Above, below, and in init
 #
 #Issues:
-#        Request reciever logs out after send request, but request is not
-#             Immediately cancelled
 #        Make sure all area_effect_clouds are truly permanent
 #        Some comments are outdated and don't reflect current functionality.
 #Roadmap:
@@ -38,7 +36,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.17]","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.1.21]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 

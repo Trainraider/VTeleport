@@ -5,6 +5,9 @@ scoreboard players operation @e[tag=vtp_tp] vtp_tpInstncChck -= @s vtp_tpInstanc
 execute as @a run scoreboard players operation @s idm_idCheck = @s idm_id
 scoreboard players operation @a idm_idCheck -= @s vtp_tpid
 
+#cancel request if the other player logged out
+#execute unless entity @a[scores={idm_idCheck=0}] run scoreboard players set @s tpcancel 1
+
 #If confirmation has been accepted or denied, user moves on to next step.
 execute if entity @a[scores={confirm=1..,idm_idCheck=0}] run scoreboard players set @s vtp_tpStep 3
 
