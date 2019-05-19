@@ -1,7 +1,8 @@
+
 #handle players that just logged off
 execute as @e[tag=idm.logoutId] run function vteleport:tpa/logout
 #handle players that were offline.
-execute as @e[tag=idm.offline] run function vteleport:tpa/wrapup
+execute as @a[tag=idm.offline] run function vteleport:tpa/wrapup
 #Generate list of players for teleport requester
 execute as @a[scores={tpa=1}] run function vteleport:tpa/tpinit
 #make armor stands follow prospective teleport options

@@ -14,8 +14,7 @@ scoreboard players operation @a vtp_tprInstnChck -= @s vtp_tpInstance
 kill @e[tag=vtp_tp,scores={vtp_tpInstncChck=0}]
 
 #Remove 1 from all greater tpInstances and from the vtp_maxTpInstnce to erase this vtp_tpInstance.
-scoreboard players remove @e[scores={vtp_tpInstncChck=1..}] vtp_tpInstance 1
-scoreboard players remove #var vtp_maxTpInstnce 1
+execute if entity @s[scores={vtp_tpInstance=1..}] run function vteleport:tpa/wrapup/block0
 
 #enable user to use tpa again
 scoreboard players enable @s tpa
@@ -23,6 +22,8 @@ scoreboard players enable @s tpa
 #reset objectives used in tpa
 scoreboard players reset @a[scores={vtp_tprInstnChck=0}] confirm
 scoreboard players reset @a[scores={vtp_tprInstnChck=0}] vtp_tprInstance
+scoreboard players reset @s confirm
+scoreboard players reset @s vtp_tprInstance
 scoreboard players reset @s vtp_tpInstance
 scoreboard players reset @s vtp_tpStep
 scoreboard players reset @s vtp_timeOut

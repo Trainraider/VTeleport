@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.2.1
+#Version: V0.2.2
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
@@ -35,7 +35,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.2.1]","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.2.2]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
