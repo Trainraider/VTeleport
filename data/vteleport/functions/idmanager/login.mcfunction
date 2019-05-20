@@ -1,6 +1,8 @@
 #players without an ID have it set to 0, others are unchanged
 scoreboard players add @a idm_id 0
 scoreboard players add #var idm_maxIdIndex 1
+#Signal to externals that player is logging in, perhaps for first time.
+tag @s add idm.login
 #This is a signal to external features that a player has been offline and may
 #require special handling.
 tag @s[scores={idm_offline=1..}] add idm.offline

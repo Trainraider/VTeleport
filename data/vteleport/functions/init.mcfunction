@@ -69,6 +69,8 @@ scoreboard objectives remove vtp_tpStep
 scoreboard objectives remove vtp_timeOut
 scoreboard objectives remove vtp_validId
 
+tag @a[tag=vtp_tpa] remove vtp_tpa
+tag @a[tag=vtp_tpahere] remove vtp_tpahere
 tag @a[tag=vtp_active] remove vtp_active
 
 #request a teleport
@@ -102,6 +104,16 @@ scoreboard players set #var vtp_maxTpInstnce 1
 kill @e[type=armor_stand,tag=vtp_tp]
 scoreboard players enable @a tpa
 scoreboard players set @a vtp_tpidIndex 0
+###############################################################################
+
+#TPAHERE#
+###############################################################################
+#For the sake of avoiding reduncancy and simplifying developement, tpahere will
+#piggyback off tpa and use all the same files, but with new checks to decide
+#who's going where.
+scoreboard objectives remove tpahere
+scoreboard objectives add tpahere trigger
+scoreboard players enable @a tpahere
 ###############################################################################
 
 #TPCANCEL#

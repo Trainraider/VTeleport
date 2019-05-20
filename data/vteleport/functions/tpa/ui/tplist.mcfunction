@@ -1,7 +1,8 @@
 #Create the list of players you can teleport to.
 execute as @a run scoreboard players operation @s idm_idIndexCheck = @s idm_idIndex
 scoreboard players operation @a idm_idIndexCheck -= @e[tag=vtp_a1,scores={vtp_tpInstncChck=0}] vtp_tpidIndex
-tellraw @s {"text":"Teleport to","bold":"true","color":"aqua"}
+tellraw @s[tag=vtp_tpa] {"text":"Teleport to:","bold":"true","color":"aqua"}
+tellraw @s[tag=vtp_tpahere] {"text":"Teleport whom here?","bold":"true","color":"aqua"}
 execute at @e[tag=vtp_a1,scores={vtp_tpInstncChck=0,vtp_validId=1..}] unless score @a[scores={idm_idIndexCheck=0},limit=1] idm_id = @s idm_id run tellraw @s {"text":"","extra":[{"selector":"@a[scores={idm_idIndexCheck=0},limit=1]","color":"yellow"},{"text":" [X]","bold":"true","color":"green","clickEvent":{"action":"run_command","value":"/trigger vtp_tpidIndex set 1"}}]}
 execute at @e[tag=vtp_a2,scores={vtp_tpInstncChck=0,vtp_validId=1..}] unless score @a[scores={idm_idIndexCheck=1},limit=1] idm_id = @s idm_id run tellraw @s {"text":"","extra":[{"selector":"@a[scores={idm_idIndexCheck=1},limit=1]","color":"yellow"},{"text":" [X]","bold":"true","color":"green","clickEvent":{"action":"run_command","value":"/trigger vtp_tpidIndex set 2"}}]}
 execute at @e[tag=vtp_a3,scores={vtp_tpInstncChck=0,vtp_validId=1..}] unless score @a[scores={idm_idIndexCheck=2},limit=1] idm_id = @s idm_id run tellraw @s {"text":"","extra":[{"selector":"@a[scores={idm_idIndexCheck=2},limit=1]","color":"yellow"},{"text":" [X]","bold":"true","color":"green","clickEvent":{"action":"run_command","value":"/trigger vtp_tpidIndex set 3"}}]}
