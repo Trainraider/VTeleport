@@ -1,6 +1,6 @@
 #Uncomment in final release
 gamerule sendCommandFeedback false
-tellraw @a {"text":"[Vanilla Teleport V0.2.3]","color":"yellow"}
+tellraw @a {"text":"[Vanilla Teleport V0.3]","color":"yellow"}
 #version
 scoreboard objectives remove version
 scoreboard objectives add version trigger
@@ -101,7 +101,7 @@ scoreboard objectives add vtp_timeOut dummy
 scoreboard objectives add vtp_validId dummy
 
 scoreboard players set #var vtp_maxTpInstnce 1
-kill @e[type=armor_stand,tag=vtp_tp]
+kill @e[tag=vtp_tp]
 scoreboard players enable @a tpa
 scoreboard players set @a vtp_tpidIndex 0
 ###############################################################################

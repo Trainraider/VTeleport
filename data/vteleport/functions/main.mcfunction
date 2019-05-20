@@ -1,6 +1,6 @@
 ###############################################################################
 #VTeleport
-#Version: V0.2.3
+#Version: V0.3
 #Author u/Trainraider
 #We live in a society. Bottom Text.
 #
@@ -10,13 +10,9 @@
 #Issues:
 #        If spawn is moved the datapack breaks.
 #Really Minor Issues:
-#        Some comments are outdated and don't reflect current functionality.
 #        If you yourself, are the only player on the last page of the list in ui,
 #              you can open up a blank page.
 #Roadmap:
-# V0.3 teleport here
-#        named tpahere
-#        Add uninstall function
 # V0.4 favorite players list for simplifying tp requests when lots of players are
 #        online
 # V0.5 teleport to spawn
@@ -37,7 +33,7 @@
 # V1.0 Full release after bug fixes.
 ###############################################################################
 
-tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.2.3]","color":"yellow"}
+tellraw @a[scores={version=1..}] {"text":"[Vanilla Teleport V0.3]","color":"yellow"}
 scoreboard players set @a[scores={version=1..}] version 0
 scoreboard players enable @a version
 
