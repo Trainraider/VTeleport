@@ -1,4 +1,6 @@
-#The user as no longer vtp_active, remove tag
+#The user as no longer active, remove tags
+tag @s remove vtp_tpa
+tag @s remove vtp_tpahere
 tag @s remove vtp_active
 #Prepare armorstands vtp_tpInstance value for comparison
 execute as @e[tag=vtp_tp] run scoreboard players operation @s vtp_tpInstncChck = @s vtp_tpInstance
@@ -18,6 +20,7 @@ execute if entity @s[scores={vtp_tpInstance=1..}] run function vteleport:tpa/wra
 
 #enable user to use tpa again
 scoreboard players enable @s tpa
+scoreboard players enable @s tpahere
 
 #reset objectives used in tpa
 scoreboard players reset @a[scores={vtp_tprInstnChck=0}] confirm
